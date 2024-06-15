@@ -43,8 +43,7 @@ namespace TalentApp
 
         private async void btn_Click_SignIn(object sender, RoutedEventArgs e)
         {
-            //await SupabaseSingleton.Instance.Auth.SignIn("vlad.lysenko1999@gmail.com", "111111");
-            await SupabaseQuerys.SignInWithGoogle();
+            await SupabaseSingleton.Instance.Auth.SignIn("vlad.lysenko1999@gmail.com", "111111");
             tbEmail.Text = SupabaseQuerys.GetCurrentUserEmail();
         }
 
