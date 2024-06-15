@@ -5,24 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TalentApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="75"/>
-            <RowDefinition/>
-            <RowDefinition Height="75"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <TextBlock Grid.Row="0" Grid.Column ="1" Grid.ColumnSpan="2" x:Name="tbEmail"/>
-        <DataGrid x:Name="dgMain" Grid.Row="1" Grid.ColumnSpan="4"/>
-        <Button Grid.Row="2" Grid.Column ="0"  x:Name="btnLogin" Content="Sign Up" HorizontalAlignment="Center" Margin="10,10,0,0" VerticalAlignment="Center" Width="75" Click="btn_Click"/>
-        <Button Grid.Row="2" Grid.Column ="1"  x:Name="btnReg" Content="Sign In" HorizontalAlignment="Center" Margin="10,10,0,0" VerticalAlignment="Center" Width="75" Click="btn_Click_SignIn"/>
-        <Button Grid.Row="2" Grid.Column ="2" Grid.ColumnSpan="2"  x:Name="btnGet" Content="Get From DB" HorizontalAlignment="Center" Margin="10,10,0,0" VerticalAlignment="Center" Width="200" Click="btn_Click_Get"/>
-    </Grid>
-   
+        Title="MainWindow" Height="600" Width="800">
+    <Frame x:Name="MainFrame" NavigationUIVisibility ="Hidden"/>
 </Window>
