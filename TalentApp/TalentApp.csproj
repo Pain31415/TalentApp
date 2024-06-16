@@ -11,7 +11,9 @@
   <ItemGroup>
     <None Remove="Assets\Girl.jpg" />
     <None Remove="Assets\Hands.jpg" />
+    <None Remove="Assets\Location.png" />
     <None Remove="Assets\Logo.jpg" />
+    <None Remove="Assets\Name.png" />
     <None Remove="Assets\talent.png" />
   </ItemGroup>
 
@@ -27,7 +29,9 @@
   <ItemGroup>
     <Resource Include="Assets\Girl.jpg" />
     <Resource Include="Assets\Hands.jpg" />
+    <Resource Include="Assets\Location.png" />
     <Resource Include="Assets\Logo.jpg" />
+    <Resource Include="Assets\Name.png" />
     <Resource Include="Assets\talent.png" />
   </ItemGroup>
 
