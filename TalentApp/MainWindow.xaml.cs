@@ -1,8 +1,4 @@
-﻿using Domain.Models;
-using Server;
-using Supabase;
-using System.Windows;
-using System.Windows.Controls;
+﻿using System.Windows;
 
 namespace TalentApp
 {
@@ -13,7 +9,5 @@ namespace TalentApp
             InitializeComponent();
             MainFrame.Content = new Onboarding();
         }
-
-      
     }
 }
