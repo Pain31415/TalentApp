@@ -26,7 +26,6 @@ namespace TalentApp
 
         private void NextStepButton_Click(object sender, RoutedEventArgs e)
         {
-            // Navigate to the Industries screen
             var mainWindow = (MainWindow)Window.GetWindow(this);
             mainWindow.MainFrame.Content = new Industries();
         }

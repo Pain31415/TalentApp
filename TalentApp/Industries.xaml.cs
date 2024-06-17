@@ -13,7 +13,30 @@ namespace TalentApp
 
         private void NextStepButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Proceed to the next step");
+            // Перевірка вибору ролі
+            if (HrToggleButton.IsChecked == true)
+            {
+                MessageBox.Show("Proceed as HR");
+                NavigateToWindow5();
+            }
+            else if (UserToggleButton.IsChecked == true)
+            {
+                MessageBox.Show("Proceed as User");
+                NavigateToWindow5();
+            }
+            else
+            {
+                MessageBox.Show("Please select a role (HR or User).");
+            }
+        }
+
+        private void NavigateToWindow5()
+        {
+            MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
+            if (mainWindow != null)
+            {
+                mainWindow.MainFrame.Content = new Window5();
+            }
         }
 
         private void TextBox_GotFocus(object sender, RoutedEventArgs e)
@@ -41,6 +64,26 @@ namespace TalentApp
                 }
                 textBox.Foreground = new SolidColorBrush(Colors.Gray);
             }
+        }
+
+        private void HrToggleButton_Checked(object sender, RoutedEventArgs e)
+        {
+            UserToggleButton.IsChecked = false;
+        }
+
+        private void HrToggleButton_Unchecked(object sender, RoutedEventArgs e)
+        {
+            // Додаткові дії при відміні вибору HR
+        }
+
+        private void UserToggleButton_Checked(object sender, RoutedEventArgs e)
+        {
+            HrToggleButton.IsChecked = false;
+        }
+
+        private void UserToggleButton_Unchecked(object sender, RoutedEventArgs e)
+        {
+            // Додаткові дії при відміні вибору User
         }
     }
 }
