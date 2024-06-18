@@ -4,9 +4,9 @@ using System.Windows.Media;
 
 namespace TalentApp
 {
-    public partial class Window5 : UserControl
+    public partial class Window6 : UserControl
     {
-        public Window5()
+        public Window6()
         {
             InitializeComponent();
         }
