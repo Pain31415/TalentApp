@@ -16,26 +16,19 @@ namespace TalentApp
             // Перевірка вибору ролі
             if (HrToggleButton.IsChecked == true)
             {
-                MessageBox.Show("Proceed as HR");
-                NavigateToWindow5();
+                // Перехід на Window5
+                MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
+                mainWindow.MainFrame.Content = new Window5();
             }
             else if (UserToggleButton.IsChecked == true)
             {
-                MessageBox.Show("Proceed as User");
-                NavigateToWindow5();
+                // Перехід на Window6
+                MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
+                mainWindow.MainFrame.Content = new Window6();
             }
             else
             {
                 MessageBox.Show("Please select a role (HR or User).");
-            }
-        }
-
-        private void NavigateToWindow5()
-        {
-            MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
-            if (mainWindow != null)
-            {
-                mainWindow.MainFrame.Content = new Window5();
             }
         }
 
