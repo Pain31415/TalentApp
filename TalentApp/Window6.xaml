@@ -5,6 +5,41 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d">
 
+    <UserControl.Resources>
+        <Style x:Key="RoundedButtonStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="1" 
+                                CornerRadius="10" 
+                                Padding="10,5" 
+                                SnapsToDevicePixels="True">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ComboBoxItemStyle" TargetType="ComboBoxItem">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="Background" Value="LightGray"/>
+                </Trigger>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="Background" Value="White"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+
     <Grid Background="Black">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -27,39 +62,45 @@
 
                 <TextBlock Text="Current industry" FontSize="16" Foreground="Gray" Margin="0,0,0,10" HorizontalAlignment="Center"/>
 
-                <Border BorderBrush="DarkGray" BorderThickness="1" Margin="0,10,0,0" Width="300">
+                <Border BorderBrush="DarkGray" BorderThickness="1" Margin="0,10,0,0" Background="Black" Width="300">
                     <Grid>
-                        <TextBox x:Name="SearchTextBox" 
-                                 Text="Search industry..." 
-                                 Foreground="Gray" 
-                                 Background="Transparent" 
-                                 BorderThickness="0" 
-                                 VerticalAlignment="Center"
-                                 HorizontalAlignment="Left"
-                                 Padding="5,0,0,0"
-                                 IsReadOnly="True"/>
                         <ComboBox x:Name="IndustryComboBox" 
                                   IsEditable="True" 
-                                  Background="Transparent" 
-                                  Foreground="Black" 
-                                  BorderThickness="0" 
+                                  Background="Black" 
+                                  
+                                  BorderBrush="DarkGray" 
                                   Height="30"
                                   VerticalAlignment="Center"
+                                  HorizontalAlignment="Stretch"
                                   Margin="0,0,0,0"
                                   SelectionChanged="IndustryComboBox_SelectionChanged"
-                                  GotFocus="IndustryComboBox_GotFocus"
-                                  LostFocus="IndustryComboBox_LostFocus">
-                            <ComboBoxItem Content="Technology"/>
-                            <ComboBoxItem Content="Healthcare"/>
-                            <ComboBoxItem Content="Finance"/>
-                            <ComboBoxItem Content="Education"/>
-                            <ComboBoxItem Content="Retail"/>
+                                  HorizontalContentAlignment="Center"
+                                  VerticalContentAlignment="Center">
+                            <ComboBox.ItemContainerStyle>
+                                <Style TargetType="ComboBoxItem" BasedOn="{StaticResource ComboBoxItemStyle}" />
+                            </ComboBox.ItemContainerStyle>
+                            <ComboBoxItem IsEnabled="False" Content="Business"/>
+                            <ComboBoxItem Content="Business analyst"/>
+                            <ComboBoxItem Content="Business manager"/>
+                            <ComboBoxItem Content="Business development"/>
+                            <ComboBoxItem Content="Business partner"/>
+                            <ComboBoxItem IsEnabled="False" Content="Technology"/>
+                            <ComboBoxItem Content="Software developer"/>
+                            <ComboBoxItem Content="IT support"/>
+                            <ComboBoxItem Content="System administrator"/>
+                            <ComboBoxItem Content="Network engineer"/>
+                            <ComboBoxItem IsEnabled="False" Content="Healthcare"/>
+                            <ComboBoxItem Content="Doctor"/>
+                            <ComboBoxItem Content="Nurse"/>
+                            <ComboBoxItem Content="Medical technician"/>
+                            <ComboBoxItem Content="Pharmacist"/>
+                            
                         </ComboBox>
                     </Grid>
                 </Border>
 
-                <Button Content="Next step" Width="200" Height="50" Margin="0,50,0,0" Background="#9ACD32" Click="NextStepButton_Click"/>
-                <Button Content="Back" Width="200" Height="50" Margin="0,20,0,0" Background="#9ACD32" Click="BackButton_Click"/>
+                <Button Content="Next step" Width="200" Height="50" Margin="0,50,0,0" Background="#9ACD32" Click="NextStepButton_Click" Style="{StaticResource RoundedButtonStyle}"/>
+                <Button Content="Back" Width="200" Height="50" Margin="0,20,0,0" Background="#9ACD32" Click="BackButton_Click" Style="{StaticResource RoundedButtonStyle}"/>
             </StackPanel>
         </Grid>
 
