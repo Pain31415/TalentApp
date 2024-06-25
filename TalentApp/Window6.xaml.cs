@@ -1,6 +1,5 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media;
 
 namespace TalentApp
 {
@@ -13,12 +12,13 @@ namespace TalentApp
 
         private void IndustryComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            // Handle ComboBox selection change if needed
+           
         }
 
         private void NextStepButton_Click(object sender, RoutedEventArgs e)
         {
-            // Handle "Next step" button click
+            MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
+            mainWindow.MainFrame.Content = new Window8();
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
