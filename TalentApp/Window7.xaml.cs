@@ -4,46 +4,45 @@ using System.Windows.Media;
 
 namespace TalentApp
 {
-    public partial class Window5 : UserControl
+    public partial class Window7 : UserControl
     {
-        public Window5()
+        public Window7()
         {
             InitializeComponent();
         }
 
-        private void IndustryComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void SalaryComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+           
         }
 
-        private void IndustryComboBox_GotFocus(object sender, RoutedEventArgs e)
+        private void SalaryComboBox_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (SearchTextBox.Text == "Search industry...")
+            if (SearchTextBox.Text == "Choose your salary bundling")
             {
                 SearchTextBox.Text = "";
                 SearchTextBox.Foreground = new SolidColorBrush(Colors.White);
             }
         }
 
-        private void IndustryComboBox_LostFocus(object sender, RoutedEventArgs e)
+        private void SalaryComboBox_LostFocus(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(SearchTextBox.Text))
             {
-                SearchTextBox.Text = "Search industry...";
+                SearchTextBox.Text = "Choose your salary bundling";
                 SearchTextBox.Foreground = new SolidColorBrush(Colors.Gray);
             }
         }
 
-        private void NextStepButton_Click(object sender, RoutedEventArgs e)
+        private void NextButton_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
-            mainWindow.MainFrame.Content = new Window7();
+            
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
-            mainWindow.MainFrame.Content = new Industries();
+            mainWindow.MainFrame.Content = new Window5();
         }
     }
 }
