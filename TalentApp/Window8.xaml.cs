@@ -12,19 +12,19 @@ namespace TalentApp
 
         private void NextButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Next button clicked");
+            MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
+            if (mainWindow != null)
+            {
+                mainWindow.MainFrame.Content = new Window10();
+            }
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            
-            Window6 window6 = new Window6();
-
-            
-            Window parentWindow = Window.GetWindow(this);
-            if (parentWindow != null)
+            MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
+            if (mainWindow != null)
             {
-                parentWindow.Content = window6;
+                mainWindow.MainFrame.Content = new Window6();
             }
         }
 

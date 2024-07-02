@@ -2,34 +2,40 @@
 using System.Windows.Controls;
 using System.Windows.Media;
 
+
 namespace TalentApp
 {
-    public partial class Window7 : UserControl
+    
+    public partial class Window10 : UserControl
     {
-        public Window7()
+        public Window10()
         {
             InitializeComponent();
+
         }
 
-        private void SalaryComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void IndustryComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-           
+            if (IndustryComboBox.SelectedItem != null)
+            {
+                SearchTextBox.Text = IndustryComboBox.Text;
+            }
         }
 
-        private void SalaryComboBox_GotFocus(object sender, RoutedEventArgs e)
+        private void IndustryComboBox_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (SearchTextBox.Text == "Choose your salary bundling")
+            if (SearchTextBox.Text == "Business")
             {
                 SearchTextBox.Text = "";
                 SearchTextBox.Foreground = new SolidColorBrush(Colors.White);
             }
         }
 
-        private void SalaryComboBox_LostFocus(object sender, RoutedEventArgs e)
+        private void IndustryComboBox_LostFocus(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(SearchTextBox.Text))
             {
-                SearchTextBox.Text = "Choose your salary bundling";
+                SearchTextBox.Text = "Business";
                 SearchTextBox.Foreground = new SolidColorBrush(Colors.Gray);
             }
         }
@@ -39,18 +45,16 @@ namespace TalentApp
             MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
             if (mainWindow != null)
             {
-                mainWindow.MainFrame.Content = new Window9();
+               
             }
         }
 
-        
-        private void BackButton_Click(object sender, RoutedEventArgs e) 
-
+        private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
             if (mainWindow != null)
             {
-                mainWindow.MainFrame.Content = new Window5();
+                mainWindow.MainFrame.Content = new Window8();
             }
         }
     }
