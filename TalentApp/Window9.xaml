@@ -8,7 +8,7 @@
              VerticalAlignment="Stretch">
 
     <UserControl.Resources>
-        <!-- Стилі повинні бути визначені або імпортовані -->
+
         <Style x:Key="RoundedButtonStyle" TargetType="Button">
             <Setter Property="Template">
                 <Setter.Value>
@@ -69,7 +69,7 @@
             </Grid.ColumnDefinitions>
 
             <Border Grid.Column="0" Margin="86,0,86,0" VerticalAlignment="Center" HorizontalAlignment="Stretch" CornerRadius="20 20 20 20" ClipToBounds="True">
-                <Image Source="/Assets/Girl.jpg" Stretch="Uniform" VerticalAlignment="Center" HorizontalAlignment="Center" MaxHeight="500"/>
+                <Image Source="/Assets/sfera.jpg" Stretch="Uniform" VerticalAlignment="Top" HorizontalAlignment="Center" MaxHeight="500"/>
             </Border>
 
             <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Width="306">

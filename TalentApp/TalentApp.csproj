@@ -15,8 +15,10 @@
     <None Remove="Assets\IT2.jpg" />
     <None Remove="Assets\Location.png" />
     <None Remove="Assets\Logo.jpg" />
+    <None Remove="Assets\medium.jpg" />
     <None Remove="Assets\Name.png" />
     <None Remove="Assets\photo.png" />
+    <None Remove="Assets\sfera.jpg" />
     <None Remove="Assets\talent.png" />
   </ItemGroup>
 
@@ -36,8 +38,10 @@
     <Resource Include="Assets\IT2.jpg" />
     <Resource Include="Assets\Location.png" />
     <Resource Include="Assets\Logo.jpg" />
+    <Resource Include="Assets\medium.jpg" />
     <Resource Include="Assets\Name.png" />
     <Resource Include="Assets\photo.png" />
+    <Resource Include="Assets\sfera.jpg" />
     <Resource Include="Assets\talent.png" />
   </ItemGroup>
 
