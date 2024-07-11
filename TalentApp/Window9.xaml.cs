@@ -4,21 +4,27 @@ using System.Windows.Media;
 
 namespace TalentApp
 {
-    public partial class Window5 : UserControl
+    public partial class Window9 : UserControl
     {
-        public Window5()
+        public Window9()
         {
             InitializeComponent();
+            UpdateNextButtonState();
         }
 
         private void IndustryComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            // This method can be used to handle additional logic when selection changes.
+            UpdateNextButtonState();
+        }
+
+        private void UpdateNextButtonState()
+        {
+            NextButton.IsEnabled = IndustryComboBox.SelectedItem != null;
         }
 
         private void IndustryComboBox_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (SearchTextBox.Text == "Search industry...")
+            if (SearchTextBox.Text == "Business")
             {
                 SearchTextBox.Text = "";
                 SearchTextBox.Foreground = new SolidColorBrush(Colors.White);
@@ -29,21 +35,27 @@ namespace TalentApp
         {
             if (string.IsNullOrWhiteSpace(SearchTextBox.Text))
             {
-                SearchTextBox.Text = "Search industry...";
+                SearchTextBox.Text = "Business";
                 SearchTextBox.Foreground = new SolidColorBrush(Colors.Gray);
             }
         }
 
-        private void NextStepButton_Click(object sender, RoutedEventArgs e)
+        private void NextButton_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
-            mainWindow.MainFrame.Content = new Window7();
+            if (mainWindow != null)
+            {
+                mainWindow.MainFrame.Content = new Window11();
+            }
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
-            mainWindow.MainFrame.Content = new Industries();
+            if (mainWindow != null)
+            {
+                mainWindow.MainFrame.Content = new Window7();
+            }
         }
     }
 }

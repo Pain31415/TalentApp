@@ -13,7 +13,14 @@ namespace TalentApp
 
         private void SalaryComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-           
+            if (SalaryComboBox.SelectedIndex != -1)
+            {
+                NextButton.IsEnabled = true;
+            }
+            else
+            {
+                NextButton.IsEnabled = false;
+            }
         }
 
         private void SalaryComboBox_GotFocus(object sender, RoutedEventArgs e)
@@ -36,13 +43,20 @@ namespace TalentApp
 
         private void NextButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
+            if (mainWindow != null)
+            {
+                mainWindow.MainFrame.Content = new Window9();
+            }
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
-            mainWindow.MainFrame.Content = new Window5();
+            if (mainWindow != null)
+            {
+                mainWindow.MainFrame.Content = new Window5();
+            }
         }
     }
 }

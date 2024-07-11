@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace TalentApp
 {
@@ -12,19 +13,19 @@ namespace TalentApp
 
         private void NextButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Next button clicked");
+            MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
+            if (mainWindow != null)
+            {
+                mainWindow.MainFrame.Content = new Window10();
+            }
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            
-            Window6 window6 = new Window6();
-
-            
-            Window parentWindow = Window.GetWindow(this);
-            if (parentWindow != null)
+            MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
+            if (mainWindow != null)
             {
-                parentWindow.Content = window6;
+                mainWindow.MainFrame.Content = new Window6();
             }
         }
 
@@ -33,12 +34,21 @@ namespace TalentApp
             if (SalaryComboBox.SelectedItem != null)
             {
                 SearchTextBox.Text = SalaryComboBox.Text;
+                NextButton.IsEnabled = true;
+            }
+            else
+            {
+                NextButton.IsEnabled = false;
             }
         }
 
         private void SalaryComboBox_GotFocus(object sender, RoutedEventArgs e)
         {
-            SearchTextBox.Text = "";
+            if (SearchTextBox.Text == "Choose your salary bundling")
+            {
+                SearchTextBox.Text = "";
+                SearchTextBox.Foreground = new SolidColorBrush(Colors.White);
+            }
         }
 
         private void SalaryComboBox_LostFocus(object sender, RoutedEventArgs e)
@@ -46,6 +56,7 @@ namespace TalentApp
             if (string.IsNullOrWhiteSpace(SearchTextBox.Text))
             {
                 SearchTextBox.Text = "Choose your salary bundling";
+                SearchTextBox.Foreground = new SolidColorBrush(Colors.Gray);
             }
         }
     }
