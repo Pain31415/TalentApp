@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace TalentApp
 {
@@ -33,12 +34,21 @@ namespace TalentApp
             if (SalaryComboBox.SelectedItem != null)
             {
                 SearchTextBox.Text = SalaryComboBox.Text;
+                NextButton.IsEnabled = true;
+            }
+            else
+            {
+                NextButton.IsEnabled = false;
             }
         }
 
         private void SalaryComboBox_GotFocus(object sender, RoutedEventArgs e)
         {
-            SearchTextBox.Text = "";
+            if (SearchTextBox.Text == "Choose your salary bundling")
+            {
+                SearchTextBox.Text = "";
+                SearchTextBox.Foreground = new SolidColorBrush(Colors.White);
+            }
         }
 
         private void SalaryComboBox_LostFocus(object sender, RoutedEventArgs e)
@@ -46,6 +56,7 @@ namespace TalentApp
             if (string.IsNullOrWhiteSpace(SearchTextBox.Text))
             {
                 SearchTextBox.Text = "Choose your salary bundling";
+                SearchTextBox.Foreground = new SolidColorBrush(Colors.Gray);
             }
         }
     }

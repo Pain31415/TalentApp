@@ -46,6 +46,13 @@
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="BorderThickness" Value="0"/>
         </Style>
+        <Style x:Key="NextStepButtonStyle" TargetType="Button" BasedOn="{StaticResource RoundedButtonStyle}">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding SelectedItem, ElementName=IndustryComboBox}" Value="{x:Null}">
+                    <Setter Property="IsEnabled" Value="False"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
     </UserControl.Resources>
 
     <Grid Background="Black">
@@ -117,7 +124,7 @@
                     </Grid>
                 </Border>
 
-                <Button Content="Next step" Width="200" Height="50" Margin="0,50,0,0" Background="#9ACD32" Click="NextStepButton_Click" Style="{StaticResource RoundedButtonStyle}"/>
+                <Button x:Name="NextStepButton" Content="Next step" Width="200" Height="50" Margin="0,50,0,0" Background="#9ACD32" Click="NextStepButton_Click" Style="{StaticResource NextStepButtonStyle}"/>
                 <Button Content="Back" Width="200" Height="50" Margin="0,20,0,0" Background="#9ACD32" Click="BackButton_Click" Style="{StaticResource RoundedButtonStyle}"/>
             </StackPanel>
         </Grid>

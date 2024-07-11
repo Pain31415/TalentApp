@@ -108,7 +108,7 @@
                     </Grid>
                 </Border>
 
-                <Button Content="Next" Width="200" Height="50" Margin="0,50,0,0" Background="#9ACD32" Click="NextButton_Click" Style="{StaticResource RoundedButtonStyle}"/>
+                <Button x:Name="NextButton" Content="Next" Width="200" Height="50" Margin="0,50,0,0" Background="#9ACD32" Click="NextButton_Click" Style="{StaticResource RoundedButtonStyle}"/>
                 <Button Content="Back" Width="200" Height="50" Margin="0,20,0,0" Background="#9ACD32" Click="BackButton_Click" Style="{StaticResource RoundedButtonStyle}"/>
             </StackPanel>
         </Grid>

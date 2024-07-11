@@ -12,7 +12,14 @@ namespace TalentApp
 
         private void IndustryComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-           
+            if (IndustryComboBox.SelectedIndex != -1)
+            {
+                NextStepButton.IsEnabled = true;
+            }
+            else
+            {
+                NextStepButton.IsEnabled = false;
+            }
         }
 
         private void NextStepButton_Click(object sender, RoutedEventArgs e)

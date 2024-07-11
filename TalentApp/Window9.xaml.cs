@@ -9,11 +9,17 @@ namespace TalentApp
         public Window9()
         {
             InitializeComponent();
+            UpdateNextButtonState();
         }
 
         private void IndustryComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-         
+            UpdateNextButtonState();
+        }
+
+        private void UpdateNextButtonState()
+        {
+            NextButton.IsEnabled = IndustryComboBox.SelectedItem != null;
         }
 
         private void IndustryComboBox_GotFocus(object sender, RoutedEventArgs e)
@@ -39,7 +45,7 @@ namespace TalentApp
             MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
             if (mainWindow != null)
             {
-                mainWindow.MainFrame.Content = new Window10();
+                mainWindow.MainFrame.Content = new Window11();
             }
         }
 

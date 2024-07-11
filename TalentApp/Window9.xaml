@@ -96,7 +96,10 @@
                                   BorderThickness="0" 
                                   Height="30"
                                   VerticalAlignment="Center"
-                                  Margin="0,0,0,0">
+                                  Margin="0,0,0,0"
+                                  SelectionChanged="IndustryComboBox_SelectionChanged"
+                                  GotFocus="IndustryComboBox_GotFocus"
+                                  LostFocus="IndustryComboBox_LostFocus">
                             <ComboBox.ItemContainerStyle>
                                 <Style TargetType="ComboBoxItem" BasedOn="{StaticResource ComboBoxItemStyle}" />
                             </ComboBox.ItemContainerStyle>
@@ -108,7 +111,7 @@
                     </Grid>
                 </Border>
 
-                <Button Content="Next" Width="200" Height="50" Margin="0,50,0,0" Background="#9ACD32" Click="NextButton_Click" Style="{StaticResource RoundedButtonStyle}"/>
+                <Button x:Name="NextButton" Content="Next" Width="200" Height="50" Margin="0,50,0,0" Background="#9ACD32" Click="NextButton_Click" Style="{StaticResource RoundedButtonStyle}" IsEnabled="False"/>
                 <Button Content="Back" Width="200" Height="50" Margin="0,20,0,0" Background="#9ACD32" Click="BackButton_Click" Style="{StaticResource RoundedButtonStyle}"/>
             </StackPanel>
         </Grid>

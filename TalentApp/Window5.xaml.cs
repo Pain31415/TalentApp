@@ -13,7 +13,7 @@ namespace TalentApp
 
         private void IndustryComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+            // This method can be used to handle additional logic when selection changes.
         }
 
         private void IndustryComboBox_GotFocus(object sender, RoutedEventArgs e)

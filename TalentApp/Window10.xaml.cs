@@ -2,16 +2,15 @@
 using System.Windows.Controls;
 using System.Windows.Media;
 
-
 namespace TalentApp
 {
-    
     public partial class Window10 : UserControl
     {
         public Window10()
         {
             InitializeComponent();
-
+           
+            NextButton.IsEnabled = false;
         }
 
         private void IndustryComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -19,6 +18,13 @@ namespace TalentApp
             if (IndustryComboBox.SelectedItem != null)
             {
                 SearchTextBox.Text = IndustryComboBox.Text;
+               
+                NextButton.IsEnabled = true;
+            }
+            else
+            {
+                
+                NextButton.IsEnabled = false;
             }
         }
 
@@ -45,7 +51,7 @@ namespace TalentApp
             MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
             if (mainWindow != null)
             {
-               
+                mainWindow.MainFrame.Content = new Window12();
             }
         }
 
