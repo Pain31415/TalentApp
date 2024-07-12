@@ -52,6 +52,19 @@
             <Setter Property="BorderBrush" Value="DarkGray"/>
             <Setter Property="Padding" Value="5,0"/>
         </Style>
+
+        <Style x:Key="CenteredTextBoxStyle" TargetType="TextBox">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="DarkGray"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="5"/>
+        </Style>
     </UserControl.Resources>
 
     <Grid Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
@@ -70,13 +83,13 @@
             </Grid.ColumnDefinitions>
 
             <Border Grid.Column="0" Margin="86,0,86,0" VerticalAlignment="Center" HorizontalAlignment="Stretch" CornerRadius="20 20 20 20" ClipToBounds="True">
-                <Image Source="/Assets/medium.jpg" Stretch="Uniform" VerticalAlignment="Top" HorizontalAlignment="Center" MaxHeight="500"/>
+                <Image Source="/Assets/sfera.jpg" Stretch="Uniform" VerticalAlignment="Top" HorizontalAlignment="Center" MaxHeight="500"/>
             </Border>
 
             <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Width="306">
                 <TextBlock Text="Onboarding" FontSize="30" Foreground="White" Margin="0,0,0,20" HorizontalAlignment="Center"/>
                 <TextBlock Text="Mobile number" FontSize="16" Foreground="Gray" Margin="0,0,0,10" HorizontalAlignment="Center"/>
-                <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,20" HorizontalAlignment="Center">
                     <ComboBox x:Name="CountryComboBox" Style="{StaticResource ComboBoxStyle}" Width="150" Margin="0,0,0,0">
                         <ComboBoxItem>
                             <StackPanel Orientation="Horizontal">
@@ -133,13 +146,12 @@
                                 <TextBlock Text="South Africa (+27)"/>
                             </StackPanel>
                         </ComboBoxItem>
-                        <!-- Add more countries as needed -->
                     </ComboBox>
-                    <TextBox x:Name="PhoneNumberTextBox" Width="150" Height="30" Background="Transparent" Foreground="White" BorderThickness="1" BorderBrush="DarkGray" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0"/>
+                    <TextBox x:Name="PhoneNumberTextBox" Style="{StaticResource CenteredTextBoxStyle}" Background="Transparent" Foreground="White" BorderThickness="1" BorderBrush="DarkGray" TextChanged="PhoneNumberTextBox_TextChanged"/>
                 </StackPanel>
 
                 <TextBlock Text="Verification code" FontSize="16" Foreground="Gray" Margin="0,0,0,10" HorizontalAlignment="Center"/>
-                <TextBox x:Name="VerificationCodeTextBox" Width="300" Height="30" Background="Transparent" Foreground="White" BorderThickness="1" BorderBrush="DarkGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <TextBox x:Name="VerificationCodeTextBox" Style="{StaticResource CenteredTextBoxStyle}" Background="Transparent" Foreground="White" BorderThickness="1" BorderBrush="DarkGray" TextChanged="VerificationCodeTextBox_TextChanged"/>
 
                 <Button x:Name="NextButton" Content="Next" Width="200" Height="50" Margin="0,50,0,0" Background="#9ACD32" Click="NextButton_Click" Style="{StaticResource RoundedButtonStyle}" IsEnabled="False"/>
                 <Button Content="Back" Width="200" Height="50" Margin="0,20,0,0" Background="#9ACD32" Click="BackButton_Click" Style="{StaticResource RoundedButtonStyle}"/>
