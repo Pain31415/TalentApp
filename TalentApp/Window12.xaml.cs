@@ -1,6 +1,5 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media;
 
 namespace TalentApp
 {
@@ -29,19 +28,21 @@ namespace TalentApp
 
         private void NextButton_Click(object sender, RoutedEventArgs e)
         {
+            // Navigate to Window13
             MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
             if (mainWindow != null)
             {
-                mainWindow.MainFrame.Content = new Window14();
+                mainWindow.MainFrame.Content = new Window13();
             }
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
+            // Navigate back to Window11
             MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
             if (mainWindow != null)
             {
-                mainWindow.MainFrame.Content = new Window10();
+                mainWindow.MainFrame.Content = new Window11();
             }
         }
     }
