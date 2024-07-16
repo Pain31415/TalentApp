@@ -20,7 +20,7 @@ namespace TalentApp
         {
             UpdateNextButtonState();
         }
-
+         
         private void VerificationCodeTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             UpdateNextButtonState();
