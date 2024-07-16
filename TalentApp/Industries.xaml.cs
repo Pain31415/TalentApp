@@ -13,23 +13,39 @@ namespace TalentApp
 
         private void NextStepButton_Click(object sender, RoutedEventArgs e)
         {
-            // Перевірка вибору ролі
-            if (HrToggleButton.IsChecked == true)
+            if (IsFieldsValid())
             {
-                // Перехід на Window5
-                MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
-                mainWindow.MainFrame.Content = new Window5();
-            }
-            else if (UserToggleButton.IsChecked == true)
-            {
-                // Перехід на Window6
-                MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
-                mainWindow.MainFrame.Content = new Window6();
+                if (HrToggleButton.IsChecked == true)
+                {
+                    MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
+                    mainWindow.MainFrame.Content = new Window5();
+                }
+                else if (UserToggleButton.IsChecked == true)
+                {
+                    MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
+                    mainWindow.MainFrame.Content = new Window6();
+                }
+                else
+                {
+                    MessageBox.Show("Please select a role (HR or User).");
+                }
             }
             else
             {
-                MessageBox.Show("Please select a role (HR or User).");
+                MessageBox.Show("Please fill in all fields.");
             }
+        }
+
+        private bool IsFieldsValid()
+        {
+            if (FullNameTextBox.Text == "Enter your full name" ||
+                LocationTextBox.Text == "Enter your location" ||
+                string.IsNullOrWhiteSpace(FullNameTextBox.Text) ||
+                string.IsNullOrWhiteSpace(LocationTextBox.Text))
+            {
+                return false;
+            }
+            return true;
         }
 
         private void TextBox_GotFocus(object sender, RoutedEventArgs e)
@@ -66,7 +82,6 @@ namespace TalentApp
 
         private void HrToggleButton_Unchecked(object sender, RoutedEventArgs e)
         {
-            // Додаткові дії при відміні вибору HR
         }
 
         private void UserToggleButton_Checked(object sender, RoutedEventArgs e)
@@ -76,7 +91,6 @@ namespace TalentApp
 
         private void UserToggleButton_Unchecked(object sender, RoutedEventArgs e)
         {
-            // Додаткові дії при відміні вибору User
         }
     }
 }
