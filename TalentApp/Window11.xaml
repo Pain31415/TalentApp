@@ -155,6 +155,12 @@
 
                 <Button x:Name="NextButton" Content="Next" Width="200" Height="50" Margin="0,50,0,0" Background="#9ACD32" Click="NextButton_Click" Style="{StaticResource RoundedButtonStyle}" IsEnabled="False"/>
                 <Button Content="Back" Width="200" Height="50" Margin="0,20,0,0" Background="#9ACD32" Click="BackButton_Click" Style="{StaticResource RoundedButtonStyle}"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10,30,10,0">
+                    <Ellipse Width="10" Height="10" Fill="#9ACD32" Margin="5"/>
+                    <Ellipse Width="10" Height="10" Fill="#9ACD32" Margin="5"/>
+                    <Ellipse Width="10" Height="10" Fill="#9ACD32" Margin="5"/>
+                    <Ellipse Width="10" Height="10" Fill="#9ACD32" Margin="5"/>
+                </StackPanel>
             </StackPanel>
         </Grid>
 
@@ -162,7 +168,7 @@
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
                 <Grid Width="30" Height="30">
                     <Ellipse Fill="DarkViolet"/>
-                    <TextBlock Text="1" FontSize="16" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text="✔" FontSize="16" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </Grid>
                 <TextBlock Text="Personal Data" FontSize="16" Foreground="White" Margin="5"/>
             </StackPanel>
@@ -170,7 +176,7 @@
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
                 <Grid Width="30" Height="30">
                     <Ellipse Fill="Purple"/>
-                    <TextBlock Text="2" FontSize="16" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text="✔" FontSize="16" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </Grid>
                 <TextBlock Text="Industries" FontSize="16" Foreground="White" Margin="5"/>
             </StackPanel>

@@ -89,17 +89,17 @@
                                  Padding="5,0,0,0"
                                  IsReadOnly="True"/>
                         <ComboBox x:Name="IndustryComboBox" 
-                                  IsEditable="True" 
-                                  Style="{StaticResource ComboBoxStyle}"
-                                  Background="Transparent" 
-                                  Foreground="Black" 
-                                  BorderThickness="0" 
-                                  Height="30"
-                                  VerticalAlignment="Center"
-                                  Margin="0,0,0,0"
-                                  SelectionChanged="IndustryComboBox_SelectionChanged"
-                                  GotFocus="IndustryComboBox_GotFocus"
-                                  LostFocus="IndustryComboBox_LostFocus">
+          IsEditable="True" 
+          Style="{StaticResource ComboBoxStyle}"
+          Background="Transparent" 
+          Foreground="Black" 
+          BorderThickness="0" 
+          Height="30"
+          VerticalAlignment="Center"
+          Margin="0,0,0,0"
+          SelectionChanged="IndustryComboBox_SelectionChanged"
+          GotFocus="IndustryComboBox_GotFocus"
+          LostFocus="IndustryComboBox_LostFocus">
                             <ComboBox.ItemContainerStyle>
                                 <Style TargetType="ComboBoxItem" BasedOn="{StaticResource ComboBoxItemStyle}" />
                             </ComboBox.ItemContainerStyle>
@@ -107,12 +107,26 @@
                             <ComboBoxItem Content="Business manager"/>
                             <ComboBoxItem Content="Business development"/>
                             <ComboBoxItem Content="Business partner"/>
+                            <ComboBoxItem Content="Software developer"/>
+                            <ComboBoxItem Content="IT support"/>
+                            <ComboBoxItem Content="System administrator"/>
+                            <ComboBoxItem Content="Network engineer"/>
+                            <ComboBoxItem Content="Doctor"/>
+                            <ComboBoxItem Content="Nurse"/>
+                            <ComboBoxItem Content="Medical technician"/>
+                            <ComboBoxItem Content="Pharmacist"/>
                         </ComboBox>
                     </Grid>
                 </Border>
 
                 <Button x:Name="NextButton" Content="Next" Width="200" Height="50" Margin="0,50,0,0" Background="#9ACD32" Click="NextButton_Click" Style="{StaticResource RoundedButtonStyle}" IsEnabled="False"/>
                 <Button Content="Back" Width="200" Height="50" Margin="0,20,0,0" Background="#9ACD32" Click="BackButton_Click" Style="{StaticResource RoundedButtonStyle}"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10,30,10,0">
+                    <Ellipse Width="10" Height="10" Fill="#9ACD32" Margin="5"/>
+                    <Ellipse Width="10" Height="10" Fill="#9ACD32" Margin="5"/>
+                    <Ellipse Width="10" Height="10" Fill="#9ACD32" Margin="5"/>
+                    <Ellipse Width="10" Height="10" Fill="Gray" Margin="5"/>
+                </StackPanel>
             </StackPanel>
         </Grid>
 
@@ -120,7 +134,7 @@
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
                 <Grid Width="30" Height="30">
                     <Ellipse Fill="DarkViolet"/>
-                    <TextBlock Text="1" FontSize="16" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text="✔" FontSize="16" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </Grid>
                 <TextBlock Text="Personal Data" FontSize="16" Foreground="White" Margin="5"/>
             </StackPanel>
