@@ -1,28 +1,55 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace TalentApp
 {
-    /// <summary>
-    /// Interaction logic for Window11.xaml
-    /// </summary>
     public partial class Window11 : UserControl
     {
         public Window11()
         {
             InitializeComponent();
+            UpdateNextButtonState();
+        }
+
+        private void UpdateNextButtonState()
+        {
+            NextButton.IsEnabled = !string.IsNullOrWhiteSpace(PhoneNumberTextBox.Text) && !string.IsNullOrWhiteSpace(VerificationCodeTextBox.Text);
+        }
+
+        private void PhoneNumberTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            UpdateNextButtonState();
+        }
+         
+        private void VerificationCodeTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            UpdateNextButtonState();
+        }
+
+        private void NextButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
+            if (mainWindow != null)
+            {
+                Frame mainFrame = mainWindow.MainFrame;
+                if (mainFrame != null)
+                {
+                    mainFrame.Navigate(new Window13());
+                }
+            }
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
+            if (mainWindow != null)
+            {
+                Frame mainFrame = mainWindow.MainFrame;
+                if (mainFrame != null)
+                {
+                    mainFrame.Navigate(new Window7());
+                }
+            }
         }
     }
 }

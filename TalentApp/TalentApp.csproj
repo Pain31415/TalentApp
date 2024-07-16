@@ -45,4 +45,8 @@
     <Resource Include="Assets\talent.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="NewFolder\" />
+  </ItemGroup>
+
 </Project>
