@@ -3,7 +3,7 @@ using System.Windows.Controls;
 using System.Windows.Media.Animation;
 
 namespace TalentApp
-{
+{ 
     public partial class Home : Window
     {
         private bool isSidebarExpanded = false;
