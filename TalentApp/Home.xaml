@@ -90,22 +90,22 @@
     </Window.Resources>
 
     <Grid>
-        <!-- Кнопка для зміни ширини бокової панелі -->
+        
         <Button x:Name="ToggleSidebarButton" Style="{StaticResource NavigationButtonStyle}" 
                 VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10"
                 Click="ToggleSidebarButton_Click">
             <Image Source="Images/grid.png" Width="24" Height="24"/>
         </Button>
 
-        <!-- Бокова панель навігації -->
+        
         <StackPanel x:Name="Sidebar" Background="#23222A" Width="80" HorizontalAlignment="Left">
-            <!-- Кнопка "grid" зверху -->
+            
             <Button Style="{StaticResource NavigationButtonStyle}" Tag="Grid">
                 <Image Source="Assets/grid.png" Width="24" Height="24"/>
             </Button>
             <TextBlock x:Name="GridText" Text="Grid" Foreground="White" VerticalAlignment="Center" Visibility="Collapsed"/>
 
-            <!-- Інші кнопки навігації -->
+            
             <Button Style="{StaticResource NavigationButtonStyle}" Tag="Home">
                 <Image Source="Assets/home.png" Width="24" Height="24"/>
             </Button>
@@ -142,9 +142,9 @@
             <TextBlock x:Name="SettingsText" Text="Settings" Foreground="White" VerticalAlignment="Center" Visibility="Collapsed"/>
         </StackPanel>
 
-        <!-- Основний контент -->
+       
         <Grid Margin="80,0,0,0" Background="#2B2B3B">
-            <!-- Додайте тут вміст головного екрану -->
+           
         </Grid>
     </Grid>
 </Window>
