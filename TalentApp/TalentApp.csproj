@@ -41,6 +41,13 @@
   <ItemGroup>
     <Resource Include="Assets\Girl.jpg" />
     <Resource Include="Assets\Hands.jpg" />
+    <Resource Include="Assets\documents.png" />
+    <Resource Include="Assets\grid.png" />
+    <Resource Include="Assets\hr.png" />
+    <Resource Include="Assets\lock.png" />
+    <Resource Include="Assets\mail.png" />
+    <Resource Include="Assets\settings.png" />
+    <Resource Include="Assets\user.png" />
     <Resource Include="Assets\IT.jpg" />
     <Resource Include="Assets\IT2.jpg" />
     <Resource Include="Assets\Location.png" />
@@ -50,6 +57,10 @@
     <Resource Include="Assets\photo.png" />
     <Resource Include="Assets\sfera.jpg" />
     <Resource Include="Assets\talent.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\home.png" />
   </ItemGroup>
 
 </Project>
