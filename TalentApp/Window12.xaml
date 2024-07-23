@@ -8,7 +8,6 @@
              VerticalAlignment="Stretch">
 
     <UserControl.Resources>
-        <!-- Existing Styles -->
         <Style x:Key="RoundedButtonStyle" TargetType="Button">
             <Setter Property="Template">
                 <Setter.Value>
@@ -25,13 +24,6 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-        </Style>
-
-        <Style x:Key="BackButtonStyle" TargetType="Button" BasedOn="{StaticResource RoundedButtonStyle}">
-            <Setter Property="Background" Value="Black"/>
-            <Setter Property="BorderBrush" Value="#9ACD32"/>
-            <Setter Property="BorderThickness" Value="2"/>
-            <Setter Property="Foreground" Value="White"/>
         </Style>
 
         <Style x:Key="ComboBoxItemStyle" TargetType="ComboBoxItem">
@@ -99,7 +91,61 @@
                 <TextBlock Text="Mobile number" FontSize="16" Foreground="Gray" Margin="0,0,0,10" HorizontalAlignment="Center"/>
                 <StackPanel Orientation="Horizontal" Margin="0,0,0,20" HorizontalAlignment="Center">
                     <ComboBox x:Name="CountryComboBox" Style="{StaticResource ComboBoxStyle}" Width="150" Margin="0,0,0,0">
-                        <!-- ComboBox Items -->
+                        <ComboBoxItem>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Australia (+61)"/>
+                            </StackPanel>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="United States (+1)"/>
+                            </StackPanel>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="United Kingdom (+44)"/>
+                            </StackPanel>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Canada (+1)"/>
+                            </StackPanel>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Germany (+49)"/>
+                            </StackPanel>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="France (+33)"/>
+                            </StackPanel>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Ukraine (+380)"/>
+                            </StackPanel>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="India (+91)"/>
+                            </StackPanel>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Japan (+81)"/>
+                            </StackPanel>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Brazil (+55)"/>
+                            </StackPanel>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="South Africa (+27)"/>
+                            </StackPanel>
+                        </ComboBoxItem>
                     </ComboBox>
                     <TextBox x:Name="PhoneNumberTextBox" Style="{StaticResource CenteredTextBoxStyle}" Background="Transparent" Foreground="White" BorderThickness="1" BorderBrush="DarkGray" TextChanged="PhoneNumberTextBox_TextChanged"/>
                 </StackPanel>
@@ -108,8 +154,7 @@
                 <TextBox x:Name="VerificationCodeTextBox" Style="{StaticResource CenteredTextBoxStyle}" Background="Transparent" Foreground="White" BorderThickness="1" BorderBrush="DarkGray" TextChanged="VerificationCodeTextBox_TextChanged"/>
 
                 <Button x:Name="NextButton" Content="Next" Width="200" Height="50" Margin="0,50,0,0" Background="#9ACD32" Click="NextButton_Click" Style="{StaticResource RoundedButtonStyle}" IsEnabled="False"/>
-                <Button Content="Back" Width="200" Height="50" Margin="0,20,0,0" Style="{StaticResource BackButtonStyle}" Click="BackButton_Click"/>
-
+                <Button Content="Back" Width="200" Height="50" Margin="0,20,0,0" Background="#9ACD32" Click="BackButton_Click" Style="{StaticResource RoundedButtonStyle}"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10,30,10,0">
                     <Ellipse Width="10" Height="10" Fill="#9ACD32" Margin="5"/>
                     <Ellipse Width="10" Height="10" Fill="#9ACD32" Margin="5"/>
