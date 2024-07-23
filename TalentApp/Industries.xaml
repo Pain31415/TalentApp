@@ -4,6 +4,27 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d">
+    <UserControl.Resources>
+        <Style x:Key="RoleToggleButtonStyle" TargetType="ToggleButton">
+            <Setter Property="Background" Value="Gray"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ToggleButton">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsChecked" Value="True">
+                    <Setter Property="Background" Value="#9ACD32"/>
+                    <Setter Property="Foreground" Value="Black"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
     <Grid Background="Black">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -55,11 +76,19 @@
                 <!-- Toggle Button for HR and User -->
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,30,0,0">
                     <TextBlock Text="Register as:" FontSize="16" Foreground="White" Margin="0,0,10,0" VerticalAlignment="Center"/>
-                    <ToggleButton x:Name="HrToggleButton" Content="HR" Width="100" Height="50" Background="Gray" Checked="HrToggleButton_Checked" Unchecked="HrToggleButton_Unchecked"/>
-                    <ToggleButton x:Name="UserToggleButton" Content="User" Width="100" Height="50" Background="Gray" Margin="10,0,0,0" Checked="UserToggleButton_Checked" Unchecked="UserToggleButton_Unchecked"/>
+                    <ToggleButton x:Name="HrToggleButton" Content="HR" Width="100" Height="50" Margin="0,0,10,0" Checked="HrToggleButton_Checked" Unchecked="HrToggleButton_Unchecked" Style="{StaticResource RoleToggleButtonStyle}"/>
+                    <ToggleButton x:Name="UserToggleButton" Content="User" Width="100" Height="50" Margin="0,0,0,0" Checked="UserToggleButton_Checked" Unchecked="UserToggleButton_Unchecked" Style="{StaticResource RoleToggleButtonStyle}"/>
                 </StackPanel>
 
-                <Button Content="Next step" Width="200" Height="50" Margin="0,30,0,0" Background="#9ACD32" Click="NextStepButton_Click"/>
+                <Button Content="Next step" Width="200" Height="50" Margin="0,30,0,0" Background="#9ACD32" Click="NextStepButton_Click">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="10">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
             </StackPanel>
         </Grid>
 

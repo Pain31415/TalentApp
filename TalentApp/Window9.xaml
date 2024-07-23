@@ -8,7 +8,7 @@
              VerticalAlignment="Stretch">
 
     <UserControl.Resources>
-
+        <!-- Define RoundedButtonStyle to match Window8 -->
         <Style x:Key="RoundedButtonStyle" TargetType="Button">
             <Setter Property="Template">
                 <Setter.Value>
@@ -27,6 +27,7 @@
             </Setter>
         </Style>
 
+        <!-- Define ComboBoxItemStyle -->
         <Style x:Key="ComboBoxItemStyle" TargetType="ComboBoxItem">
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="Background" Value="White"/>
@@ -44,12 +45,21 @@
             </Style.Triggers>
         </Style>
 
+        <!-- Define ComboBoxStyle -->
         <Style x:Key="ComboBoxStyle" TargetType="ComboBox">
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+
+        <!-- Define BackButtonStyle to match Window8 -->
+        <Style x:Key="BackButtonStyle" TargetType="Button" BasedOn="{StaticResource RoundedButtonStyle}">
+            <Setter Property="Background" Value="Black"/>
+            <Setter Property="BorderBrush" Value="#9ACD32"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Foreground" Value="White"/>
         </Style>
     </UserControl.Resources>
 
@@ -89,17 +99,17 @@
                                  Padding="5,0,0,0"
                                  IsReadOnly="True"/>
                         <ComboBox x:Name="IndustryComboBox" 
-          IsEditable="True" 
-          Style="{StaticResource ComboBoxStyle}"
-          Background="Transparent" 
-          Foreground="Black" 
-          BorderThickness="0" 
-          Height="30"
-          VerticalAlignment="Center"
-          Margin="0,0,0,0"
-          SelectionChanged="IndustryComboBox_SelectionChanged"
-          GotFocus="IndustryComboBox_GotFocus"
-          LostFocus="IndustryComboBox_LostFocus">
+                                  IsEditable="True" 
+                                  Style="{StaticResource ComboBoxStyle}"
+                                  Background="Transparent" 
+                                  Foreground="Black" 
+                                  BorderThickness="0" 
+                                  Height="30"
+                                  VerticalAlignment="Center"
+                                  Margin="0,0,0,0"
+                                  SelectionChanged="IndustryComboBox_SelectionChanged"
+                                  GotFocus="IndustryComboBox_GotFocus"
+                                  LostFocus="IndustryComboBox_LostFocus">
                             <ComboBox.ItemContainerStyle>
                                 <Style TargetType="ComboBoxItem" BasedOn="{StaticResource ComboBoxItemStyle}" />
                             </ComboBox.ItemContainerStyle>
@@ -120,7 +130,9 @@
                 </Border>
 
                 <Button x:Name="NextButton" Content="Next" Width="200" Height="50" Margin="0,50,0,0" Background="#9ACD32" Click="NextButton_Click" Style="{StaticResource RoundedButtonStyle}" IsEnabled="False"/>
-                <Button Content="Back" Width="200" Height="50" Margin="0,20,0,0" Background="#9ACD32" Click="BackButton_Click" Style="{StaticResource RoundedButtonStyle}"/>
+
+                <Button x:Name="BackButton" Content="Back" Width="200" Height="50" Margin="0,20,0,0" Style="{StaticResource BackButtonStyle}" Click="BackButton_Click"/>
+
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10,30,10,0">
                     <Ellipse Width="10" Height="10" Fill="#9ACD32" Margin="5"/>
                     <Ellipse Width="10" Height="10" Fill="#9ACD32" Margin="5"/>
