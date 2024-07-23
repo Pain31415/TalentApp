@@ -6,7 +6,8 @@
         <Style x:Key="NavigationButtonStyle" TargetType="Button">
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="BorderBrush" Value="Transparent"/>
-            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Margin" Value="20"/>
+            <!-- Increased margin -->
             <Setter Property="Padding" Value="10"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
@@ -90,62 +91,70 @@
     </Window.Resources>
 
     <Grid>
-        
+
         <Button x:Name="ToggleSidebarButton" Style="{StaticResource NavigationButtonStyle}" 
                 VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10"
                 Click="ToggleSidebarButton_Click">
-            <Image Source="Images/grid.png" Width="24" Height="24"/>
+            <Image Source="Images/grid.png" Width="32" Height="32"/>
+            <!-- Increased size -->
         </Button>
 
-        
+
         <StackPanel x:Name="Sidebar" Background="#23222A" Width="80" HorizontalAlignment="Left">
-            
+
             <Button Style="{StaticResource NavigationButtonStyle}" Tag="Grid">
-                <Image Source="Assets/grid.png" Width="24" Height="24"/>
+                <Image Source="Assets/grid.png" Width="32" Height="32"/>
+                <!-- Increased size -->
             </Button>
             <TextBlock x:Name="GridText" Text="Grid" Foreground="White" VerticalAlignment="Center" Visibility="Collapsed"/>
 
-            
+
             <Button Style="{StaticResource NavigationButtonStyle}" Tag="Home">
-                <Image Source="Assets/home.png" Width="24" Height="24"/>
+                <Image Source="Assets/home.png" Width="32" Height="32"/>
+                <!-- Increased size -->
             </Button>
             <TextBlock x:Name="HomeText" Text="Home" Foreground="White" VerticalAlignment="Center" Visibility="Collapsed"/>
 
             <Button Style="{StaticResource NavigationButtonStyle}" Tag="Documents">
-                <Image Source="Assets/documents.png" Width="24" Height="24"/>
+                <Image Source="Assets/documents.png" Width="32" Height="32"/>
+                <!-- Increased size -->
             </Button>
             <TextBlock x:Name="DocumentsText" Text="Documents" Foreground="White" VerticalAlignment="Center" Visibility="Collapsed"/>
 
             <Button Style="{StaticResource NavigationButtonStyle}" Tag="Mail">
-                <Image Source="Assets/mail.png" Width="24" Height="24"/>
+                <Image Source="Assets/mail.png" Width="32" Height="32"/>
+                <!-- Increased size -->
             </Button>
             <TextBlock x:Name="MailText" Text="Mail" Foreground="White" VerticalAlignment="Center" Visibility="Collapsed"/>
 
             <Button Style="{StaticResource NavigationButtonStyle}" Tag="User">
-                <Image Source="Assets/user.png" Width="24" Height="24"/>
+                <Image Source="Assets/user.png" Width="32" Height="32"/>
+                <!-- Increased size -->
             </Button>
             <TextBlock x:Name="UserText" Text="User" Foreground="White" VerticalAlignment="Center" Visibility="Collapsed"/>
 
             <Button Style="{StaticResource NavigationButtonStyle}" Tag="HR">
-                <Image Source="Assets/hr.png" Width="24" Height="24"/>
+                <Image Source="Assets/hr.png" Width="32" Height="32"/>
+                <!-- Increased size -->
             </Button>
             <TextBlock x:Name="HRText" Text="HR" Foreground="White" VerticalAlignment="Center" Visibility="Collapsed"/>
 
             <Button Style="{StaticResource NavigationButtonStyle}" Tag="Lock">
-                <Image Source="Assets/lock.png" Width="24" Height="24"/>
+                <Image Source="Assets/lock.png" Width="32" Height="32"/>
+                <!-- Increased size -->
             </Button>
             <TextBlock x:Name="LockText" Text="Lock" Foreground="White" VerticalAlignment="Center" Visibility="Collapsed"/>
 
             <Button Style="{StaticResource NavigationButtonStyle}" Tag="Settings">
-                <Image Source="Assets/settings.png" Width="24" Height="24"/>
+                <Image Source="Assets/settings.png" Width="32" Height="32"/>
+                <!-- Increased size -->
             </Button>
             <TextBlock x:Name="SettingsText" Text="Settings" Foreground="White" VerticalAlignment="Center" Visibility="Collapsed"/>
         </StackPanel>
 
-       
+
         <Grid Margin="80,0,0,0" Background="#2B2B3B">
-           
+
         </Grid>
     </Grid>
 </Window>
-    
