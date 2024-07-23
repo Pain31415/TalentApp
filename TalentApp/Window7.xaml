@@ -48,6 +48,13 @@
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="BorderThickness" Value="0"/>
         </Style>
+        <!-- Define the style for the Back button -->
+        <Style x:Key="BackButtonStyle" TargetType="Button" BasedOn="{StaticResource RoundedButtonStyle}">
+            <Setter Property="Background" Value="Black"/>
+            <Setter Property="BorderBrush" Value="#9ACD32"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
     </UserControl.Resources>
 
     <Grid Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
@@ -110,7 +117,7 @@
                 </Border>
 
                 <Button x:Name="NextButton" Content="Next" Width="200" Height="50" Margin="0,50,0,0" Background="#9ACD32" Click="NextButton_Click" Style="{StaticResource RoundedButtonStyle}" IsEnabled="False"/>
-                <Button Content="Back" Width="200" Height="50" Margin="0,20,0,0" Background="#9ACD32" Click="BackButton_Click" Style="{StaticResource RoundedButtonStyle}"/>
+                <Button Content="Back" Width="200" Height="50" Margin="0,20,0,0" Style="{StaticResource BackButtonStyle}" Click="BackButton_Click"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10,30,10,0">
                     <Ellipse Width="10" Height="10" Fill="#9ACD32" Margin="5"/>
                     <Ellipse Width="10" Height="10" Fill="#9ACD32" Margin="5"/>
