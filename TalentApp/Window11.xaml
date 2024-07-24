@@ -67,7 +67,7 @@
         </Style>
     </UserControl.Resources>
 
-    <Grid Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+    <Grid Background="Black" Height="720">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -90,7 +90,7 @@
                 <TextBlock Text="Onboarding" FontSize="30" Foreground="White" Margin="0,0,0,20" HorizontalAlignment="Center"/>
                 <TextBlock Text="Mobile number" FontSize="16" Foreground="Gray" Margin="0,0,0,10" HorizontalAlignment="Center"/>
                 <StackPanel Orientation="Horizontal" Margin="0,0,0,20" HorizontalAlignment="Center">
-                    <ComboBox x:Name="CountryComboBox" Style="{StaticResource ComboBoxStyle}" Width="150" Margin="0,0,0,0">
+                    <ComboBox x:Name="CountryComboBox" Style="{StaticResource ComboBoxStyle}" Width="27" Margin="0,0,0,0">
                         <ComboBoxItem>
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="Australia (+61)"/>
@@ -164,7 +164,7 @@
             </StackPanel>
         </Grid>
 
-        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,45,15,0" Width="381">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
                 <Grid Width="30" Height="30">
                     <Ellipse Fill="DarkViolet"/>
@@ -176,7 +176,7 @@
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
                 <Grid Width="30" Height="30">
                     <Ellipse Fill="Purple"/>
-                    <TextBlock Text="✔" FontSize="16" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text="2" FontSize="16" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </Grid>
                 <TextBlock Text="Industries" FontSize="16" Foreground="White" Margin="5"/>
             </StackPanel>
