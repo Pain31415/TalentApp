@@ -46,13 +46,13 @@
             </StackPanel>
         </Grid>
 
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="1016,0,0,0" Height="100" Width="521">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,90,15,0" Width="381" Height="50">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
                 <Grid Width="30" Height="30">
                     <Ellipse Fill="DarkViolet"/>
                     <TextBlock Text="✔" FontSize="16" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </Grid>
-                <TextBlock Text="Personal Data" FontSize="16" Foreground="White" Margin="5" Height="23"/>
+                <TextBlock Text="Personal Data" FontSize="16" Foreground="White" Margin="5"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
@@ -60,7 +60,7 @@
                     <Ellipse Fill="Purple"/>
                     <TextBlock Text="2" FontSize="16" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </Grid>
-                <TextBlock Text="Industries" FontSize="16" Foreground="White" Margin="5" Height="23"/>
+                <TextBlock Text="Industries" FontSize="16" Foreground="White" Margin="5"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
@@ -68,7 +68,7 @@
                     <Ellipse Fill="DarkViolet"/>
                     <TextBlock Text="3" FontSize="16" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </Grid>
-                <TextBlock Text="Verification" FontSize="16" Foreground="Gray" Margin="5" Height="25"/>
+                <TextBlock Text="Verification" FontSize="16" Foreground="Gray" Margin="5"/>
             </StackPanel>
         </StackPanel>
     </Grid>
