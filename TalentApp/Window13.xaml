@@ -18,7 +18,7 @@
         <Image Source="/Assets/Logo.jpg" Width="100" Height="100" Margin="15,15,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
         <Grid Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Height="111">
                 <TextBlock Text="Onboarding" FontSize="30" Foreground="White" Margin="0,0,0,20" HorizontalAlignment="Center"/>
                 <TextBlock Text="We are checking your telephone number..." FontSize="16" Foreground="Gray" Margin="0,0,0,10" HorizontalAlignment="Center"/>
                 <StackPanel x:Name="LoadingPanel" HorizontalAlignment="Center" VerticalAlignment="Center">
