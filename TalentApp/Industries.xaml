@@ -29,70 +29,11 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <Image Source="/Assets/Logo.jpg" Width="100" Height="100" Margin="50" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
-        <Grid Grid.Row="1" Margin="20,0,20,0" VerticalAlignment="Top">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="3*"/>
-                <ColumnDefinition Width="2*"/>
-            </Grid.ColumnDefinitions>
-
-            <Image Source="/Assets/Hands.jpg" Grid.Column="0" Margin="10" Stretch="Uniform" VerticalAlignment="Top"/>
-
-            <StackPanel Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,0,0,0">
-                <TextBlock Text="Onboarding" FontSize="30" Foreground="White" Margin="0,0,0,20" HorizontalAlignment="Center"/>
-
-                <StackPanel>
-                    <TextBlock Text="Full Name" FontSize="16" Foreground="White" Margin="0,0,0,5"/>
-                    <Border Background="DimGray" CornerRadius="5" Margin="0,0,0,10">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="Auto"/>
-                            </Grid.ColumnDefinitions>
-                            <TextBox Name="FullNameTextBox" Width="300" Height="30" Margin="0" Foreground="White" Background="Transparent" Text="Enter your full name" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" BorderThickness="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-                            <Image Source="/Assets/Name.png" Width="20" Height="20" Margin="5" Grid.Column="1"/>
-                        </Grid>
-                    </Border>
-                </StackPanel>
-
-                <StackPanel>
-                    <TextBlock Text="Location" FontSize="16" Foreground="White" Margin="0,20,0,5"/>
-                    <Border Background="DimGray" CornerRadius="5" Margin="0,0,0,10">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="Auto"/>
-                            </Grid.ColumnDefinitions>
-                            <TextBox Name="LocationTextBox" Width="300" Height="30" Margin="0" Foreground="White" Background="Transparent" Text="Enter your location" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" BorderThickness="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-                            <Image Source="/Assets/Location.png" Width="20" Height="20" Margin="5" Grid.Column="1"/>
-                        </Grid>
-                    </Border>
-                </StackPanel>
-
-                <!-- Toggle Button for HR and User -->
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,30,0,0">
-                    <TextBlock Text="Register as:" FontSize="16" Foreground="White" Margin="0,0,10,0" VerticalAlignment="Center"/>
-                    <ToggleButton x:Name="HrToggleButton" Content="HR" Width="100" Height="50" Margin="0,0,10,0" Checked="HrToggleButton_Checked" Unchecked="HrToggleButton_Unchecked" Style="{StaticResource RoleToggleButtonStyle}"/>
-                    <ToggleButton x:Name="UserToggleButton" Content="User" Width="100" Height="50" Margin="0,0,0,0" Checked="UserToggleButton_Checked" Unchecked="UserToggleButton_Unchecked" Style="{StaticResource RoleToggleButtonStyle}"/>
-                </StackPanel>
-
-                <Button Content="Next step" Width="200" Height="50" Margin="0,30,0,0" Background="#9ACD32" Click="NextStepButton_Click">
-                    <Button.Template>
-                        <ControlTemplate TargetType="Button">
-                            <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="10">
-                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                            </Border>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
-            </StackPanel>
-        </Grid>
-
-        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,80,180,0" VerticalAlignment="Top">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
                 <Grid Width="30" Height="30">
                     <Ellipse Fill="Purple"/>
@@ -117,5 +58,66 @@
                 <TextBlock Text="Verification" FontSize="16" Foreground="Gray" Margin="5"/>
             </StackPanel>
         </StackPanel>
+
+        <Grid Grid.Row="1" Margin="20,0,20,0" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Source="/Assets/Hands.jpg" Grid.Column="0" Margin="10" Stretch="Uniform" VerticalAlignment="Top"/>
+
+            <StackPanel Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,0,0,0">
+                <TextBlock Text="Onboarding" FontSize="30" Foreground="White" Margin="0,0,0,20" HorizontalAlignment="Center"/>
+
+                <StackPanel>
+                    <TextBlock Text="Full Name" FontSize="16" Foreground="White" Margin="0,0,0,5"/>
+                    <Border Background="DimGray" CornerRadius="5" Margin="0,0,0,10">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="/Assets/Name.png" Width="20" Height="20" Margin="5" Grid.Column="0"/>
+                            <TextBox Name="FullNameTextBox" Width="300" Height="30" Margin="0" Foreground="White" Background="Transparent" Text="Enter your full name" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" BorderThickness="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                </StackPanel>
+
+
+                <StackPanel>
+                    <TextBlock Text="Location" FontSize="16" Foreground="White" Margin="0,20,0,5"/>
+                    <Border Background="DimGray" CornerRadius="5" Margin="0,0,0,10">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="/Assets/Location.png" Width="20" Height="20" Margin="5" Grid.Column="0"/>
+                            <TextBox Name="LocationTextBox" Width="300" Height="30" Margin="0" Foreground="White" Background="Transparent" Text="Enter your location" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" BorderThickness="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                </StackPanel>
+
+
+
+                <!-- Toggle Button for HR and User -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,30,0,0">
+                    <TextBlock Text="Register as:" FontSize="16" Foreground="White" Margin="0,0,10,0" VerticalAlignment="Center"/>
+                    <ToggleButton x:Name="HrToggleButton" Content="HR" Width="100" Height="50" Margin="0,0,10,0" Checked="HrToggleButton_Checked" Unchecked="HrToggleButton_Unchecked" Style="{StaticResource RoleToggleButtonStyle}"/>
+                    <ToggleButton x:Name="UserToggleButton" Content="User" Width="100" Height="50" Margin="0,0,0,0" Checked="UserToggleButton_Checked" Unchecked="UserToggleButton_Unchecked" Style="{StaticResource RoleToggleButtonStyle}"/>
+                </StackPanel>
+
+                <Button Content="Next step" Width="200" Height="50" Margin="0,30,0,0" Background="#9ACD32" Click="NextStepButton_Click">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="10">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+        </Grid>
     </Grid>
 </UserControl>

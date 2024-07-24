@@ -1,5 +1,8 @@
-﻿using System.Windows;
+﻿using System.Text.RegularExpressions;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
+using System.Windows.Data;
 
 namespace TalentApp
 {
@@ -13,30 +16,83 @@ namespace TalentApp
 
         private void UpdateNextButtonState()
         {
-            NextButton.IsEnabled = !string.IsNullOrWhiteSpace(PhoneNumberTextBox.Text) && !string.IsNullOrWhiteSpace(VerificationCodeTextBox.Text);
+            NextButton.IsEnabled = !string.IsNullOrWhiteSpace(PhoneNumberTextBox.Text) &&
+                                   VerificationCodeTextBox.Text.Length == 4;
         }
 
         private void PhoneNumberTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             UpdateNextButtonState();
         }
-         
+
         private void VerificationCodeTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             UpdateNextButtonState();
         }
 
-        private void NextButton_Click(object sender, RoutedEventArgs e)
+        private void VerificationCodeTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
-            if (mainWindow != null)
+            e.Handled = !IsDigitsOnly(e.Text) || VerificationCodeTextBox.Text.Length >= 4;
+        }
+
+        private void VerificationCodeTextBox_Pasting(object sender, DataObjectPastingEventArgs e)
+        {
+            if (e.DataObject.GetDataPresent(DataFormats.Text))
             {
-                Frame mainFrame = mainWindow.MainFrame;
-                if (mainFrame != null)
+                string text = (string)e.DataObject.GetData(DataFormats.Text);
+                if (!IsDigitsOnly(text) || VerificationCodeTextBox.Text.Length + text.Length > 4)
                 {
-                    mainFrame.Navigate(new Window13());
+                    e.CancelCommand();
                 }
             }
+            else
+            {
+                e.CancelCommand();
+            }
+        }
+
+        private void VerificationCodeTextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (VerificationCodeTextBox.Text.Length != 4)
+            {
+                VerificationCodeErrorTextBlock.Text = "Please enter exactly 4 digits.";
+                VerificationCodeTextBox.Focus();
+            }
+            else
+            {
+                VerificationCodeErrorTextBlock.Text = "";
+            }
+        }
+
+        private bool IsDigitsOnly(string text)
+        {
+            return Regex.IsMatch(text, @"^\d+$");
+        }
+
+        private void NextButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (IsPhoneNumberValid() && IsVerificationCodeValid())
+            {
+                MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
+                if (mainWindow != null)
+                {
+                    Frame? mainFrame = mainWindow.MainFrame;
+                    if (mainFrame != null)
+                    {
+                        mainFrame.Navigate(new Window13());
+                    }
+                }
+            }
+        }
+
+        private bool IsPhoneNumberValid()
+        {
+            return IsDigitsOnly(PhoneNumberTextBox.Text);
+        }
+
+        private bool IsVerificationCodeValid()
+        {
+            return VerificationCodeTextBox.Text.Length == 4;
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
@@ -44,10 +100,10 @@ namespace TalentApp
             MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
             if (mainWindow != null)
             {
-                Frame mainFrame = mainWindow.MainFrame;
+                Frame? mainFrame = mainWindow.MainFrame;
                 if (mainFrame != null)
                 {
-                    mainFrame.Navigate(new Window7());
+                    mainFrame.Navigate(new Window9());
                 }
             }
         }

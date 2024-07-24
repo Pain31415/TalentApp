@@ -48,7 +48,6 @@
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="BorderThickness" Value="0"/>
         </Style>
-        <!-- Define the style for the Back button -->
         <Style x:Key="BackButtonStyle" TargetType="Button" BasedOn="{StaticResource RoundedButtonStyle}">
             <Setter Property="Background" Value="Black"/>
             <Setter Property="BorderBrush" Value="#9ACD32"/>
@@ -76,7 +75,7 @@
                 <Image Source="/Assets/IT2.jpg" Stretch="Uniform" VerticalAlignment="Center" HorizontalAlignment="Center" MaxHeight="500"/>
             </Border>
 
-            <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Width="306">
+            <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,70" Width="306">
                 <TextBlock Text="Onboarding" FontSize="30" Foreground="White" Margin="0,0,0,20" HorizontalAlignment="Center"/>
 
                 <TextBlock Text="Current salary" FontSize="16" Foreground="Gray" Margin="0,0,0,10" HorizontalAlignment="Center"/>
@@ -118,6 +117,8 @@
 
                 <Button x:Name="NextButton" Content="Next" Width="200" Height="50" Margin="0,50,0,0" Background="#9ACD32" Click="NextButton_Click" Style="{StaticResource RoundedButtonStyle}" IsEnabled="False"/>
                 <Button Content="Back" Width="200" Height="50" Margin="0,20,0,0" Style="{StaticResource BackButtonStyle}" Click="BackButton_Click"/>
+
+                <!-- Add the green dots here -->
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10,30,10,0">
                     <Ellipse Width="10" Height="10" Fill="#9ACD32" Margin="5"/>
                     <Ellipse Width="10" Height="10" Fill="#9ACD32" Margin="5"/>
@@ -127,24 +128,24 @@
             </StackPanel>
         </Grid>
 
-        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,80,180,0">
+            <StackPanel Orientation="Horizontal" Margin="5">
                 <Grid Width="30" Height="30">
-                    <Ellipse Fill="DarkViolet"/>
+                    <Ellipse Fill="Purple"/>
                     <TextBlock Text="✔" FontSize="16" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </Grid>
                 <TextBlock Text="Personal Data" FontSize="16" Foreground="White" Margin="5"/>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+            <StackPanel Orientation="Horizontal" Margin="5">
                 <Grid Width="30" Height="30">
-                    <Ellipse Fill="Purple"/>
+                    <Ellipse Fill="DarkViolet"/>
                     <TextBlock Text="2" FontSize="16" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </Grid>
-                <TextBlock Text="Industries" FontSize="16" Foreground="White" Margin="5"/>
+                <TextBlock Text="Industries" FontSize="16" Foreground="Gray" Margin="5"/>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+            <StackPanel Orientation="Horizontal" Margin="5">
                 <Grid Width="30" Height="30">
                     <Ellipse Fill="DarkViolet"/>
                     <TextBlock Text="3" FontSize="16" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
