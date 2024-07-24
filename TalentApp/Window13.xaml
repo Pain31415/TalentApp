@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              HorizontalAlignment="Stretch"
              VerticalAlignment="Stretch"
-             Loaded="UserControl_Loaded">
+             Loaded="UserControl_Loaded" Height="251" Width="469">
 
     <Grid Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <Grid.RowDefinitions>
@@ -33,29 +33,29 @@
             </StackPanel>
         </Grid>
 
-        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="156,0,0,0" Height="38">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
-                <Grid Width="30" Height="30">
+                <Grid Width="20" Height="20">
                     <Ellipse Fill="DarkViolet"/>
-                    <TextBlock Text="✔" FontSize="16" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text="✔" FontSize="12" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </Grid>
-                <TextBlock Text="Personal Data" FontSize="16" Foreground="White" Margin="5"/>
+                <TextBlock Text="Personal Data" FontSize="12" Foreground="White" Margin="5"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
-                <Grid Width="30" Height="30">
+                <Grid Width="20" Height="20">
                     <Ellipse Fill="Purple"/>
-                    <TextBlock Text="✔" FontSize="16" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text="✔" FontSize="12" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </Grid>
-                <TextBlock Text="Industries" FontSize="16" Foreground="White" Margin="5"/>
+                <TextBlock Text="Industries" FontSize="12" Foreground="White" Margin="5"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
-                <Grid Width="30" Height="30">
+                <Grid Width="20" Height="20">
                     <Ellipse Fill="DarkViolet"/>
-                    <TextBlock Text="✔" FontSize="16" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text="✔" FontSize="12" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </Grid>
-                <TextBlock Text="Verification" FontSize="16" Foreground="Gray" Margin="5"/>
+                <TextBlock Text="Verification" FontSize="12" Foreground="Gray" Margin="5"/>
             </StackPanel>
         </StackPanel>
     </Grid>
