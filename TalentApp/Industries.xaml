@@ -25,7 +25,7 @@
             </Style.Triggers>
         </Style>
     </UserControl.Resources>
-    <Grid Background="Black" Width="920">
+    <Grid Background="Black" Width="953" Height="602">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -73,7 +73,6 @@
                     </Border>
                 </StackPanel>
 
-                <!-- Toggle Button for HR and User -->
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,30,0,0">
                     <TextBlock Text="Register as:" FontSize="16" Foreground="White" Margin="0,0,10,0" VerticalAlignment="Center"/>
                     <ToggleButton x:Name="HrToggleButton" Content="HR" Width="100" Height="50" Margin="0,0,10,0" Checked="HrToggleButton_Checked" Unchecked="HrToggleButton_Unchecked" Style="{StaticResource RoleToggleButtonStyle}"/>
@@ -92,29 +91,29 @@
             </StackPanel>
         </Grid>
 
-        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="579,0,0,0" Height="60" Width="359">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
-                <Grid Width="30" Height="30">
+                <Grid Width="30" Height="25">
                     <Ellipse Fill="Purple"/>
-                    <TextBlock Text="1" FontSize="16" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text="✔" FontSize="14" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </Grid>
-                <TextBlock Text="Personal Data" FontSize="16" Foreground="White" Margin="5"/>
+                <TextBlock Text="Personal Data" FontSize="14" Foreground="White" Margin="5" Height="23"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
-                <Grid Width="30" Height="30">
+                <Grid Width="30" Height="25">
                     <Ellipse Fill="DarkViolet"/>
-                    <TextBlock Text="2" FontSize="16" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text="2" FontSize="14" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </Grid>
-                <TextBlock Text="Industries" FontSize="16" Foreground="Gray" Margin="5"/>
+                <TextBlock Text="Industries" FontSize="14" Foreground="Gray" Margin="5" Height="24"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
-                <Grid Width="30" Height="30">
+                <Grid Width="30" Height="25">
                     <Ellipse Fill="DarkViolet"/>
-                    <TextBlock Text="3" FontSize="16" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text="3" FontSize="14" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </Grid>
-                <TextBlock Text="Verification" FontSize="16" Foreground="Gray" Margin="5"/>
+                <TextBlock Text="Verification" FontSize="14" Foreground="Gray" Margin="5" Height="26"/>
             </StackPanel>
         </StackPanel>
     </Grid>
