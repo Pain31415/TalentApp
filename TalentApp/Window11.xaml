@@ -90,7 +90,7 @@
                 <TextBlock Text="Onboarding" FontSize="30" Foreground="White" Margin="0,0,0,20" HorizontalAlignment="Center"/>
                 <TextBlock Text="Mobile number" FontSize="16" Foreground="Gray" Margin="0,0,0,10" HorizontalAlignment="Center"/>
                 <StackPanel Orientation="Horizontal" Margin="0,0,0,20" HorizontalAlignment="Center">
-                    <ComboBox x:Name="CountryComboBox" Style="{StaticResource ComboBoxStyle}" Width="27" Margin="0,0,0,0">
+                    <ComboBox x:Name="CountryComboBox" Style="{StaticResource ComboBoxStyle}" Width="30" Margin="0,0,0,0">
                         <ComboBoxItem>
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="Australia (+61)"/>
