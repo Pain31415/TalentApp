@@ -65,6 +65,12 @@
             <Setter Property="TextAlignment" Value="Center"/>
             <Setter Property="Padding" Value="5"/>
         </Style>
+
+        <Style x:Key="ErrorTextBlockStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="Red"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Margin" Value="0,5,0,0"/>
+        </Style>
     </UserControl.Resources>
 
     <Grid Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
@@ -86,7 +92,7 @@
                 <Image Source="/Assets/sfera.jpg" Stretch="Uniform" VerticalAlignment="Top" HorizontalAlignment="Center" MaxHeight="500"/>
             </Border>
 
-            <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Width="306">
+            <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,50" Width="306">
                 <TextBlock Text="Onboarding" FontSize="30" Foreground="White" Margin="0,0,0,20" HorizontalAlignment="Center"/>
                 <TextBlock Text="Mobile number" FontSize="16" Foreground="Gray" Margin="0,0,0,10" HorizontalAlignment="Center"/>
                 <StackPanel Orientation="Horizontal" Margin="0,0,0,20" HorizontalAlignment="Center">
@@ -99,11 +105,6 @@
                         <ComboBoxItem>
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="United States (+1)"/>
-                            </StackPanel>
-                        </ComboBoxItem>
-                        <ComboBoxItem>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="United Kingdom (+44)"/>
                             </StackPanel>
                         </ComboBoxItem>
                         <ComboBoxItem>
@@ -151,11 +152,14 @@
                 </StackPanel>
 
                 <TextBlock Text="Verification code" FontSize="16" Foreground="Gray" Margin="0,0,0,10" HorizontalAlignment="Center"/>
-                <TextBox x:Name="VerificationCodeTextBox" Style="{StaticResource CenteredTextBoxStyle}" Background="Transparent" Foreground="White" BorderThickness="1" BorderBrush="DarkGray" TextChanged="VerificationCodeTextBox_TextChanged"/>
+                <TextBox x:Name="VerificationCodeTextBox" Style="{StaticResource CenteredTextBoxStyle}" Background="Transparent" Foreground="White" BorderThickness="1" BorderBrush="DarkGray" TextChanged="VerificationCodeTextBox_TextChanged" PreviewTextInput="VerificationCodeTextBox_PreviewTextInput" LostFocus="VerificationCodeTextBox_LostFocus"/>
+
+                <TextBlock x:Name="VerificationCodeErrorTextBlock" Text="" Style="{StaticResource ErrorTextBlockStyle}" HorizontalAlignment="Center"/>
 
                 <Button x:Name="NextButton" Content="Next" Width="200" Height="50" Margin="0,50,0,0" Background="#9ACD32" Click="NextButton_Click" Style="{StaticResource RoundedButtonStyle}" IsEnabled="False"/>
                 <Button Content="Back" Width="200" Height="50" Margin="0,20,0,0" Background="#9ACD32" Click="BackButton_Click" Style="{StaticResource RoundedButtonStyle}"/>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10,30,10,0">
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
                     <Ellipse Width="10" Height="10" Fill="#9ACD32" Margin="5"/>
                     <Ellipse Width="10" Height="10" Fill="#9ACD32" Margin="5"/>
                     <Ellipse Width="10" Height="10" Fill="#9ACD32" Margin="5"/>
@@ -164,8 +168,8 @@
             </StackPanel>
         </Grid>
 
-        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,80,180,0">
+            <StackPanel Orientation="Horizontal" Margin="5">
                 <Grid Width="30" Height="30">
                     <Ellipse Fill="DarkViolet"/>
                     <TextBlock Text="✔" FontSize="16" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
@@ -173,7 +177,7 @@
                 <TextBlock Text="Personal Data" FontSize="16" Foreground="White" Margin="5"/>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+            <StackPanel Orientation="Horizontal" Margin="5">
                 <Grid Width="30" Height="30">
                     <Ellipse Fill="Purple"/>
                     <TextBlock Text="✔" FontSize="16" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
@@ -181,7 +185,7 @@
                 <TextBlock Text="Industries" FontSize="16" Foreground="White" Margin="5"/>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+            <StackPanel Orientation="Horizontal" Margin="5">
                 <Grid Width="30" Height="30">
                     <Ellipse Fill="DarkViolet"/>
                     <TextBlock Text="3" FontSize="16" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>

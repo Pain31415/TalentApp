@@ -80,7 +80,7 @@
                 <Image Source="/Assets/Hands.jpg" Stretch="Uniform" VerticalAlignment="Center" HorizontalAlignment="Center" MaxHeight="500"/>
             </Border>
 
-            <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Width="306">
+            <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,70" Width="306">
                 <TextBlock Text="Onboarding" FontSize="30" Foreground="White" Margin="0,0,0,20" HorizontalAlignment="Center"/>
 
                 <TextBlock Text="Current industry" FontSize="16" Foreground="Gray" Margin="0,0,0,10" HorizontalAlignment="Center"/>
@@ -142,8 +142,8 @@
             </StackPanel>
         </Grid>
 
-        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,80,180,0">
+            <StackPanel Orientation="Horizontal" Margin="5">
                 <Grid Width="30" Height="30">
                     <Ellipse Fill="Purple"/>
                     <TextBlock Text="✔" FontSize="16" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
@@ -151,7 +151,7 @@
                 <TextBlock Text="Personal Data" FontSize="16" Foreground="White" Margin="5"/>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+            <StackPanel Orientation="Horizontal" Margin="5">
                 <Grid Width="30" Height="30">
                     <Ellipse Fill="DarkViolet"/>
                     <TextBlock Text="2" FontSize="16" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
@@ -159,7 +159,7 @@
                 <TextBlock Text="Industries" FontSize="16" Foreground="Gray" Margin="5"/>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+            <StackPanel Orientation="Horizontal" Margin="5">
                 <Grid Width="30" Height="30">
                     <Ellipse Fill="DarkViolet"/>
                     <TextBlock Text="3" FontSize="16" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
