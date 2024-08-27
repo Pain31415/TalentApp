@@ -5,10 +5,10 @@
     <Window.Resources>
         <Style x:Key="NavigationButtonStyle" TargetType="Button">
             <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="BorderBrush" Value="Transparent"/> 
+            <Setter Property="BorderBrush" Value="Transparent"/>
             <Setter Property="Margin" Value="10"/>
             <Setter Property="Padding" Value="10"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="Cursor" Value="Hand"/>
             <Setter Property="Foreground" Value="White"/>
@@ -38,6 +38,11 @@
                             <Trigger Property="IsMouseOver" Value="True">
                                 <Setter Property="Background" Value="#383842" TargetName="PART_Button"/>
                                 <Setter Property="Visibility" Value="Visible" TargetName="Tooltip"/>
+                                <Setter Property="RenderTransform">
+                                    <Setter.Value>
+                                        <ScaleTransform ScaleX="1.1" ScaleY="1.1"/>
+                                    </Setter.Value>
+                                </Setter>
                             </Trigger>
                             <Trigger Property="IsPressed" Value="True">
                                 <Setter Property="Background" Value="#4A4A58" TargetName="PART_Button"/>
@@ -50,33 +55,33 @@
 
         <Storyboard x:Key="ExpandSidebar">
             <DoubleAnimation Storyboard.TargetName="Sidebar" Storyboard.TargetProperty="Width"
-                             From="80" To="200" Duration="0:0:0.2"/>
+                             From="80" To="200" Duration="0:0:0.3"/>
             <ObjectAnimationUsingKeyFrames Storyboard.TargetName="HomeText" Storyboard.TargetProperty="Visibility">
-                <DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.3" Value="{x:Static Visibility.Visible}"/>
             </ObjectAnimationUsingKeyFrames>
             <ObjectAnimationUsingKeyFrames Storyboard.TargetName="DocumentsText" Storyboard.TargetProperty="Visibility">
-                <DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.3" Value="{x:Static Visibility.Visible}"/>
             </ObjectAnimationUsingKeyFrames>
             <ObjectAnimationUsingKeyFrames Storyboard.TargetName="MailText" Storyboard.TargetProperty="Visibility">
-                <DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.3" Value="{x:Static Visibility.Visible}"/>
             </ObjectAnimationUsingKeyFrames>
             <ObjectAnimationUsingKeyFrames Storyboard.TargetName="UserText" Storyboard.TargetProperty="Visibility">
-                <DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.3" Value="{x:Static Visibility.Visible}"/>
             </ObjectAnimationUsingKeyFrames>
             <ObjectAnimationUsingKeyFrames Storyboard.TargetName="HRText" Storyboard.TargetProperty="Visibility">
-                <DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.3" Value="{x:Static Visibility.Visible}"/>
             </ObjectAnimationUsingKeyFrames>
             <ObjectAnimationUsingKeyFrames Storyboard.TargetName="LockText" Storyboard.TargetProperty="Visibility">
-                <DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.3" Value="{x:Static Visibility.Visible}"/>
             </ObjectAnimationUsingKeyFrames>
             <ObjectAnimationUsingKeyFrames Storyboard.TargetName="SettingsText" Storyboard.TargetProperty="Visibility">
-                <DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.3" Value="{x:Static Visibility.Visible}"/>
             </ObjectAnimationUsingKeyFrames>
         </Storyboard>
 
         <Storyboard x:Key="CollapseSidebar">
             <DoubleAnimation Storyboard.TargetName="Sidebar" Storyboard.TargetProperty="Width"
-                             From="200" To="80" Duration="0:0:0.2"/>
+                             From="200" To="80" Duration="0:0:0.3"/>
             <ObjectAnimationUsingKeyFrames Storyboard.TargetName="HomeText" Storyboard.TargetProperty="Visibility">
                 <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{x:Static Visibility.Collapsed}"/>
             </ObjectAnimationUsingKeyFrames>
@@ -102,40 +107,45 @@
     </Window.Resources>
 
     <Grid>
-        <Button x:Name="ToggleSidebarButton" Style="{StaticResource NavigationButtonStyle}" 
-                VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10"
-                Click="ToggleSidebarButton_Click">
-            <Image Source="Images/grid.png" Width="32" Height="32"/>
-        </Button>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
-        <StackPanel x:Name="Sidebar" Background="#23222A" Width="80" HorizontalAlignment="Left">
-            <Button Style="{StaticResource NavigationButtonStyle}" Tag="Grid">
-                <Image Source="Assets/grid.png" Width="32" Height="32"/>
-            </Button>
-            <Button Style="{StaticResource NavigationButtonStyle}" Tag="Home">
+        <DataGrid x:Name="AppDataGrid" Grid.Column="1" Background="#2B2B3B"/>
+
+        <Grid x:Name="Sidebar" Background="#23222A" Width="80" HorizontalAlignment="Left" VerticalAlignment="Stretch">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Button Grid.Row="0" Style="{StaticResource NavigationButtonStyle}" Tag="Home" Click="NavigationButton_Click">
                 <Image Source="Assets/home.png" Width="32" Height="32"/>
             </Button>
-            <Button Style="{StaticResource NavigationButtonStyle}" Tag="Documents">
+            <Button Grid.Row="1" Style="{StaticResource NavigationButtonStyle}" Tag="Documents" Click="NavigationButton_Click">
                 <Image Source="Assets/documents.png" Width="32" Height="32"/>
             </Button>
-            <Button Style="{StaticResource NavigationButtonStyle}" Tag="Mail">
+            <Button Grid.Row="2" Style="{StaticResource NavigationButtonStyle}" Tag="Mail" Click="NavigationButton_Click">
                 <Image Source="Assets/mail.png" Width="32" Height="32"/>
             </Button>
-            <Button Style="{StaticResource NavigationButtonStyle}" Tag="User">
+            <Button Grid.Row="3" Style="{StaticResource NavigationButtonStyle}" Tag="User" Click="NavigationButton_Click">
                 <Image Source="Assets/user.png" Width="32" Height="32"/>
             </Button>
-            <Button Style="{StaticResource NavigationButtonStyle}" Tag="HR">
+            <Button Grid.Row="4" Style="{StaticResource NavigationButtonStyle}" Tag="HR" Click="NavigationButton_Click">
                 <Image Source="Assets/hr.png" Width="32" Height="32"/>
             </Button>
-            <Button Style="{StaticResource NavigationButtonStyle}" Tag="Lock">
-                <Image Source="Assets/lock.png" Width="32" Height="32"/>
-            </Button>
-            <Button Style="{StaticResource NavigationButtonStyle}" Tag="Settings">
+            <Button Grid.Row="5" Style="{StaticResource NavigationButtonStyle}" Tag="Settings" Click="NavigationButton_Click">
                 <Image Source="Assets/settings.png" Width="32" Height="32"/>
             </Button>
-        </StackPanel>
+        </Grid>
 
-        <Grid Margin="80,0,0,0" Background="#2B2B3B">
+        <Grid Grid.Column="1" Background="#2B2B3B">
+            <ContentControl x:Name="MainContent" Background="#2B2B3B"/>
         </Grid>
     </Grid>
 </Window>
