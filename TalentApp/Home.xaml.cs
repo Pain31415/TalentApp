@@ -3,6 +3,9 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Animation;
 using TalentApp.Domain;
+using System.IO;
+using System.Threading.Tasks;
+using TalentApp;
 
 namespace TalentApp
 {
@@ -13,7 +16,6 @@ namespace TalentApp
         public Home()
         {
             InitializeComponent();
-            
         }
 
         private void ToggleSidebarButton_Click(object sender, RoutedEventArgs e)
@@ -45,7 +47,7 @@ namespace TalentApp
         private void NavigationButton_Click(object sender, RoutedEventArgs e)
         {
             Button button = sender as Button;
-            string tag = button.Tag.ToString();
+            string tag = button.Tag?.ToString();
 
             UserControl contentControl = null;
             Window window = null;
@@ -87,61 +89,116 @@ namespace TalentApp
 
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            AppDataGrid.ItemsSource = await UseCase.GetUsers();
+            var users = await UseCase.GetUsers();
+            if (users != null)
+            {
+                AppDataGrid.ItemsSource = users;
+            }
         }
     }
+}
 
-    // Зразкові класи для заміни відсутніх типів UserControl
-    public class HomeControl : UserControl
+public class HomeControl : UserControl
+{
+    public HomeControl()
     {
-      
-        public HomeControl()
+        DataGrid dataGrid = new DataGrid
         {
-            DataGrid dataGrid = new DataGrid();
-            dataGrid.ItemsSource = UseCase.GetUsers().Result;
-            Content =dataGrid;
-        }
+            ItemsSource = UseCase.GetUsers().Result
+        };
+        Content = dataGrid;
     }
+}
 
-    public class DocumentsControl : UserControl
+public class DocumentsControl : UserControl
+{
+    public DocumentsControl()
     {
-        public DocumentsControl()
+        var stackPanel = new StackPanel
         {
-            Content = new TextBlock { Text = "Documents Content", Foreground = System.Windows.Media.Brushes.White };
+            Background = System.Windows.Media.Brushes.Black
+        };
+
+        // Перевірка на наявність завантаженого файлу
+        if (!string.IsNullOrEmpty(Onboarding.UploadedFilePath))
+        {
+            string filePath = Onboarding.UploadedFilePath;
+
+            // Перевірка типу файлу і відображення відповідного вмісту
+            if (File.Exists(filePath))
+            {
+                string fileContent = File.ReadAllText(filePath);
+                stackPanel.Children.Add(new TextBlock
+                {
+                    Text = fileContent,
+                    Foreground = System.Windows.Media.Brushes.White,
+                    TextWrapping = TextWrapping.Wrap
+                });
+            }
+            else
+            {
+                stackPanel.Children.Add(new TextBlock
+                {
+                    Text = "File does not exist.",
+                    Foreground = System.Windows.Media.Brushes.Red
+                });
+            }
         }
+        else
+        {
+            stackPanel.Children.Add(new TextBlock
+            {
+                Text = "No file uploaded",
+                Foreground = System.Windows.Media.Brushes.Gray
+            });
+        }
+
+        Content = stackPanel;
     }
+}
 
-    public class MailControl : UserControl
+public class MailControl : UserControl
+{
+    public MailControl()
     {
-        public MailControl()
+        Content = new TextBlock
         {
-            Content = new TextBlock { Text = "Mail Content", Foreground = System.Windows.Media.Brushes.White };
-        }
+            Text = "Mail Content",
+            Foreground = System.Windows.Media.Brushes.White
+        };
     }
+}
 
-    public class UserControlControl : UserControl
+public class UserControlControl : UserControl
+{
+    public UserControlControl()
     {
-        public UserControlControl()
+        Content = new TextBlock
         {
-            Content = new TextBlock { Text = "User Content", Foreground = System.Windows.Media.Brushes.White };
-        }
+            Text = "User Content",
+            Foreground = System.Windows.Media.Brushes.White
+        };
     }
+}
 
-    public class HRControl : UserControl
+public class HRControl : UserControl
+{
+    public HRControl()
     {
-        public HRControl()
+        Content = new TextBlock
         {
-            Content = new TextBlock { Text = "HR Content", Foreground = System.Windows.Media.Brushes.White };
-        }
+            Text = "HR Content",
+            Foreground = System.Windows.Media.Brushes.White
+        };
     }
+}
 
-    public class SettingsWindow : Window
+public class SettingsWindow : Window
+{
+    public SettingsWindow()
     {
-        public SettingsWindow()
-        {
-            Title = "Settings Window";
-            Width = 800;
-            Height = 600;
-        }
+        Title = "Settings Window";
+        Width = 800;
+        Height = 600;
     }
 }
